@@ -11,14 +11,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            --red-dark: #c0392b;
+            --red-soft: #e74c3c;
+            --maxw: 1200px;
+        }
+
         /* ===== RESET & BASE ===== */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; font-size: 16px; }
-        body { font-family: 'Poppins', sans-serif; color: #333; background: #fff; line-height: 1.6; }
+        body { font-family: 'Poppins', sans-serif; color: #333; background: #f5f6fa; line-height: 1.6; }
         a { text-decoration: none; color: inherit; }
         ul, ol { list-style: none; }
         img { max-width: 100%; height: auto; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+        .container { max-width: var(--maxw); margin: 0 auto; padding: 0 15px; }
 
         /* ===== TOP BAR ===== */
         .top-bar { background: #0e2142; color: #fff; font-size: 13px; padding: 6px 0; }
@@ -61,12 +68,12 @@
         .mobile-nav a:hover { background: #fef5f5; color: #c0392b; }
 
         /* ===== COLLEGE PROFILE CARD ===== */
-        .college-profile { background: #fff; padding: 24px 0; border-bottom: 1px solid #eee; }
+        .college-profile { background: #fff; padding: 70px 20px 50px; border-bottom: 1px solid #eee; }
         .college-card { display: flex; gap: 24px; align-items: flex-start; }
         .college-logo-wrap { flex-shrink: 0; width: 100px; height: 100px; border-radius: 12px; overflow: hidden; border: 2px solid #eee; display: flex; align-items: center; justify-content: center; background: #f9f9f9; }
         .college-logo-wrap img { width: 80px; height: 80px; object-fit: contain; }
         .college-info { flex: 1; }
-        .college-info h1 { font-size: 22px; font-weight: 700; color: #0e2142; margin-bottom: 6px; line-height: 1.3; }
+        .college-info h1 { font-size: 32px; font-weight: 800; color: var(--red-dark); margin-bottom: 8px; line-height: 1.3; }
         .college-rating { display: inline-flex; align-items: center; gap: 6px; background: #fff8e1; border: 1px solid #ffe082; padding: 3px 10px; border-radius: 20px; font-size: 12.5px; margin-bottom: 12px; }
         .college-rating .stars { color: #f9a825; }
         .college-rating .count { color: #888; }
@@ -96,33 +103,34 @@
         .sidebar { width: 340px; flex-shrink: 0; position: sticky; top: 130px; }
 
         /* ===== SECTION BLOCKS ===== */
-        .section-block { background: #fff; border: 1px solid #eee; border-radius: 10px; padding: 24px; margin-bottom: 22px; box-shadow: 0 2px 8px rgba(0,0,0,.03); }
-        .section-block h2 { font-size: 18px; font-weight: 700; color: #0e2142; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #f0f0f0; line-height: 1.4; }
-        .section-block h2 span { color: #c0392b; }
+        .section-block { background: #fff; border: 1px solid #eee; border-radius: 18px; padding: 34px 30px; margin-bottom: 22px; box-shadow: 0 14px 40px rgba(0,0,0,0.08); }
+        .section-block h2 { font-size: 20px; font-weight: 800; color: #0e2142; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 2px solid #f0f0f0; line-height: 1.4; }
+        .section-block h2 span { color: var(--red-dark); }
+        .section-block h2::after { content: ''; display: block; width: 46px; height: 3px; background: linear-gradient(to right, var(--red-dark), var(--red-soft)); margin-top: 8px; border-radius: 2px; }
         .section-block h3 { font-size: 15px; font-weight: 600; color: #0e2142; margin: 16px 0 10px; }
-        .section-block p { font-size: 14px; color: #444; margin-bottom: 12px; line-height: 1.7; }
+        .section-block p { font-size: 14.5px; color: #444; margin-bottom: 12px; line-height: 1.7; }
         .section-block ul { padding-left: 18px; margin-bottom: 12px; }
         .section-block ul li { font-size: 13.5px; color: #444; margin-bottom: 8px; position: relative; padding-left: 16px; line-height: 1.6; }
-        .section-block ul li::before { content: ''; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; background: #c0392b; border-radius: 50%; }
+        .section-block ul li::before { content: ''; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; background: var(--red-dark); border-radius: 50%; }
         .section-block ol { padding-left: 20px; margin-bottom: 12px; list-style: decimal; }
         .section-block ol li { font-size: 13.5px; color: #444; margin-bottom: 8px; padding-left: 6px; line-height: 1.6; }
-        .know-more { display: inline-block; color: #c0392b; font-size: 13px; font-weight: 600; margin-top: 6px; }
+        .know-more { display: inline-block; color: var(--red-dark); font-size: 13px; font-weight: 600; margin-top: 6px; }
         .know-more:hover { text-decoration: underline; }
 
         /* ===== TABLES ===== */
-        .data-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; border-radius: 8px; overflow: hidden; border: 1px solid #e0e4ef; }
-        .data-table thead th { background: linear-gradient(135deg, #c0392b, #e74c3c); color: #fff; padding: 11px 14px; text-align: left; font-weight: 600; font-size: 12.5px; }
-        .data-table tbody td { padding: 10px 14px; border-bottom: 1px solid #f0f0f0; color: #444; vertical-align: top; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14.5px; border-radius: 10px; overflow: hidden; border: 1px solid #e0e4ef; }
+        .data-table thead th { background: linear-gradient(135deg, var(--red-dark), var(--red-soft)); color: #fff; padding: 12px 14px; text-align: left; font-weight: 600; font-size: 13px; }
+        .data-table tbody td { padding: 12px 14px; border-bottom: 1px solid #f0f0f0; color: #444; vertical-align: top; }
         .data-table tbody tr:nth-child(even) { background: #fff8f8; }
         .data-table tbody tr:hover { background: #fff0f0; }
 
         /* ===== CHART SECTION ===== */
-        .chart-wrap { max-width: 340px; margin: 16px auto; }
+        .chart-wrap { max-width: 340px; margin: 16px auto; background: #fafbff; border-radius: 14px; padding: 18px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
 
         /* ===== STATS CARDS ===== */
-        .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0; }
-        .stat-card { background: linear-gradient(135deg, #fafbff, #fff); border: 1px solid #e0e4ef; border-radius: 10px; padding: 16px 12px; text-align: center; }
-        .stat-card .stat-num { font-size: 22px; font-weight: 700; color: #c0392b; }
+        .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 16px 0; }
+        .stat-card { background: #fafbff; border: 1px solid #e0e4ef; border-radius: 16px; padding: 18px 14px; text-align: center; box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+        .stat-card .stat-num { font-size: 22px; font-weight: 700; color: var(--red-dark); }
         .stat-card .stat-label { font-size: 11.5px; color: #666; margin-top: 4px; font-weight: 500; }
 
         /* ===== RECRUITERS ===== */
@@ -140,7 +148,7 @@
         .faq-item.active .faq-answer { max-height: 300px; }
 
         /* ===== SIDEBAR CARDS ===== */
-        .sidebar-card { background: #fff; border: 1px solid #eee; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.03); }
+        .sidebar-card { background: #fff; border: 1px solid #eee; border-radius: 16px; padding: 22px; margin-bottom: 20px; box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
         .sidebar-card h3 { font-size: 15px; font-weight: 700; color: #0e2142; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 2px solid #f0f0f0; }
         .sidebar-card .form-group { margin-bottom: 12px; }
         .sidebar-card label { font-size: 12px; font-weight: 600; color: #555; display: block; margin-bottom: 4px; }
@@ -225,9 +233,9 @@
             .college-card { flex-direction: column; align-items: center; text-align: center; }
             .college-meta { justify-content: center; }
             .college-badges { justify-content: center; }
-            .college-info h1 { font-size: 18px; }
+            .college-info h1 { font-size: 26px; }
             .tab-link { padding: 10px 14px; font-size: 12px; }
-            .section-block { padding: 18px; }
+            .section-block { padding: 20px 16px; border-radius: 12px; }
             .section-block h2 { font-size: 16px; }
             .stats-row { grid-template-columns: repeat(2, 1fr); }
             .floating-apply { right: auto; left: 0; top: auto; bottom: 0; transform: none; width: 100%; text-align: center; border-radius: 0; padding: 12px; font-size: 15px; }
