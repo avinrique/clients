@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RV College of Engineering Bangalore (RVCE) | Vinayaka Consultancy</title>
+    <meta name="description" content="RV College of Engineering Bangalore - Admissions 2026-27, Courses, Fees, Placements, Rankings. Apply now through Vinayaka Consultancy.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: 'Poppins', sans-serif; color: #333; background: #fff; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        ul, ol { list-style: none; }
+        img { max-width: 100%; height: auto; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+
+        /* ===== TOP BAR ===== */
+        .top-bar { background: #0e2142; color: #fff; font-size: 13px; padding: 6px 0; }
+        .top-bar .container { display: flex; justify-content: space-between; align-items: center; }
+        .top-bar-phone a { color: #4cdf6b; font-weight: 600; }
+        .top-bar-phone i { margin-right: 5px; }
+        .top-bar-nav { display: flex; gap: 18px; }
+        .top-bar-nav a { color: #ccc; transition: color .2s; font-size: 12.5px; }
+        .top-bar-nav a:hover { color: #fff; }
+
+        /* ===== MAIN HEADER ===== */
+        .main-header { background: #fff; padding: 10px 0; border-bottom: 1px solid #eee; z-index: 1000; position: relative; }
+        .main-header .container { display: flex; align-items: center; justify-content: space-between; }
+        .logo { display: flex; align-items: center; gap: 10px; }
+        .logo img { height: 44px; border-radius: 6px; }
+        .logo-text { font-size: 22px; font-weight: 700; color: #c0392b; }
+        .logo-text span { display: block; font-size: 10px; font-weight: 400; color: #777; font-style: italic; }
+        .main-header.stickyheader { position: fixed; top: 0; left: 0; width: 100%; box-shadow: 0 2px 12px rgba(0,0,0,.1); animation: slideDown .3s; }
+        @keyframes slideDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+
+        /* ===== CATEGORY NAV ===== */
+        .cat-nav { display: flex; gap: 0; }
+        .cat-nav-item { position: relative; padding: 10px 14px; font-size: 13.5px; font-weight: 600; color: #333; cursor: pointer; transition: color .2s; }
+        .cat-nav-item:hover { color: #c0392b; }
+        .cat-nav-panel { display: none; position: absolute; top: 100%; left: 0; background: #fff; min-width: 280px; box-shadow: 0 8px 24px rgba(0,0,0,.12); border-radius: 0 0 8px 8px; padding: 16px; z-index: 999; }
+        .cat-nav-item:hover .cat-nav-panel { display: block; }
+        .cat-nav-panel h4 { font-size: 12px; color: #c0392b; text-transform: uppercase; margin-bottom: 8px; letter-spacing: .5px; }
+        .cat-nav-panel a { display: block; font-size: 13px; font-weight: 400; color: #444; padding: 4px 0; }
+        .cat-nav-panel a:hover { color: #c0392b; }
+
+        /* ===== MOBILE MENU ===== */
+        .mob-trigger { display: none; font-size: 22px; cursor: pointer; color: #333; padding: 8px; }
+        .mobile-nav { display: none; position: fixed; top: 0; left: -100%; width: 85%; max-width: 320px; height: 100vh; background: #fff; z-index: 9999; overflow-y: auto; transition: left .3s; box-shadow: 4px 0 20px rgba(0,0,0,.2); }
+        .mobile-nav.shownav { left: 0; }
+        .mobile-nav-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,.5); z-index: 9998; }
+        .mobile-nav-overlay.show { display: block; }
+        .mobile-nav-head { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; border-bottom: 1px solid #eee; }
+        .mobile-nav-head .close-nav { font-size: 22px; cursor: pointer; color: #333; }
+        .mobile-nav a { display: block; padding: 12px 16px; font-size: 14px; color: #333; border-bottom: 1px solid #f0f0f0; }
+        .mobile-nav a:hover { background: #fef5f5; color: #c0392b; }
+
+        /* ===== COLLEGE PROFILE CARD ===== */
+        .college-profile { background: #fff; padding: 24px 0; border-bottom: 1px solid #eee; }
+        .college-card { display: flex; gap: 24px; align-items: flex-start; }
+        .college-logo-wrap { flex-shrink: 0; width: 100px; height: 100px; border-radius: 12px; overflow: hidden; border: 2px solid #eee; display: flex; align-items: center; justify-content: center; background: #f9f9f9; }
+        .college-logo-wrap img { width: 80px; height: 80px; object-fit: contain; }
+        .college-info { flex: 1; }
+        .college-info h1 { font-size: 22px; font-weight: 700; color: #0e2142; margin-bottom: 6px; line-height: 1.3; }
+        .college-rating { display: inline-flex; align-items: center; gap: 6px; background: #fff8e1; border: 1px solid #ffe082; padding: 3px 10px; border-radius: 20px; font-size: 12.5px; margin-bottom: 12px; }
+        .college-rating .stars { color: #f9a825; }
+        .college-rating .count { color: #888; }
+        .college-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+        .college-badges .badge { display: inline-flex; align-items: center; gap: 5px; background: #fafbff; border: 1px solid #e0e4ef; border-radius: 6px; padding: 5px 12px; font-size: 12px; color: #444; }
+        .college-badges .badge i { color: #c0392b; font-size: 13px; }
+        .college-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 12px; }
+        .meta-item { display: flex; align-items: center; gap: 6px; font-size: 12.5px; color: #555; }
+        .meta-item i { color: #c0392b; font-size: 14px; width: 18px; text-align: center; }
+        .college-location { font-size: 13px; color: #666; margin-bottom: 14px; }
+        .college-location i { color: #c0392b; margin-right: 5px; }
+        .btn-apply { display: inline-block; background: #c0392b; color: #fff !important; border: none; padding: 10px 28px; border-radius: 24px; font-size: 14px; font-weight: 600; cursor: pointer; transition: background .2s, transform .1s; font-family: 'Poppins', sans-serif; }
+        .btn-apply:hover { background: #a93226; transform: translateY(-1px); }
+
+        /* ===== TAB NAVIGATION ===== */
+        .college-tabs { background: #fff; border-bottom: 2px solid #eee; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; z-index: 999; }
+        .college-tabs.stickynav { position: fixed; top: 60px; left: 0; width: 100%; box-shadow: 0 2px 8px rgba(0,0,0,.08); animation: slideDown .3s; }
+        .college-tabs .container { display: flex; gap: 0; }
+        .tab-link { display: inline-block; padding: 12px 18px; font-size: 13px; font-weight: 600; color: #555; border-bottom: 3px solid transparent; transition: all .2s; cursor: pointer; flex-shrink: 0; }
+        .tab-link:hover { color: #c0392b; }
+        .tab-link.active { color: #c0392b; border-bottom-color: #c0392b; }
+
+        /* ===== TWO-COLUMN LAYOUT ===== */
+        .content-wrap { padding: 24px 0; }
+        .content-row { display: flex; gap: 28px; align-items: flex-start; }
+        .main-content { flex: 1; min-width: 0; }
+        .sidebar { width: 340px; flex-shrink: 0; position: sticky; top: 130px; }
+
+        /* ===== SECTION BLOCKS ===== */
+        .section-block { background: #fff; border: 1px solid #eee; border-radius: 10px; padding: 24px; margin-bottom: 22px; box-shadow: 0 2px 8px rgba(0,0,0,.03); }
+        .section-block h2 { font-size: 18px; font-weight: 700; color: #0e2142; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #f0f0f0; line-height: 1.4; }
+        .section-block h2 span { color: #c0392b; }
+        .section-block h3 { font-size: 15px; font-weight: 600; color: #0e2142; margin: 16px 0 10px; }
+        .section-block p { font-size: 14px; color: #444; margin-bottom: 12px; line-height: 1.7; }
+        .section-block ul { padding-left: 18px; margin-bottom: 12px; }
+        .section-block ul li { font-size: 13.5px; color: #444; margin-bottom: 8px; position: relative; padding-left: 16px; line-height: 1.6; }
+        .section-block ul li::before { content: ''; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; background: #c0392b; border-radius: 50%; }
+        .section-block ol { padding-left: 20px; margin-bottom: 12px; list-style: decimal; }
+        .section-block ol li { font-size: 13.5px; color: #444; margin-bottom: 8px; padding-left: 6px; line-height: 1.6; }
+        .know-more { display: inline-block; color: #c0392b; font-size: 13px; font-weight: 600; margin-top: 6px; }
+        .know-more:hover { text-decoration: underline; }
+
+        /* ===== TABLES ===== */
+        .data-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; border-radius: 8px; overflow: hidden; border: 1px solid #e0e4ef; }
+        .data-table thead th { background: linear-gradient(135deg, #c0392b, #e74c3c); color: #fff; padding: 11px 14px; text-align: left; font-weight: 600; font-size: 12.5px; }
+        .data-table tbody td { padding: 10px 14px; border-bottom: 1px solid #f0f0f0; color: #444; vertical-align: top; }
+        .data-table tbody tr:nth-child(even) { background: #fff8f8; }
+        .data-table tbody tr:hover { background: #fff0f0; }
+
+        /* ===== CHART SECTION ===== */
+        .chart-wrap { max-width: 340px; margin: 16px auto; }
+
+        /* ===== STATS CARDS ===== */
+        .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0; }
+        .stat-card { background: linear-gradient(135deg, #fafbff, #fff); border: 1px solid #e0e4ef; border-radius: 10px; padding: 16px 12px; text-align: center; }
+        .stat-card .stat-num { font-size: 22px; font-weight: 700; color: #c0392b; }
+        .stat-card .stat-label { font-size: 11.5px; color: #666; margin-top: 4px; font-weight: 500; }
+
+        /* ===== RECRUITERS ===== */
+        .recruiter-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+        .recruiter-tag { background: #f5f6fa; border: 1px solid #e0e4ef; border-radius: 20px; padding: 5px 14px; font-size: 12px; color: #444; font-weight: 500; }
+
+        /* ===== FAQ ACCORDION ===== */
+        .faq-item { border: 1px solid #eee; border-radius: 8px; margin-bottom: 10px; overflow: hidden; }
+        .faq-question { padding: 14px 18px; font-size: 14px; font-weight: 600; color: #0e2142; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: #fafbff; transition: background .2s; }
+        .faq-question:hover { background: #f0f2f8; }
+        .faq-question i { font-size: 12px; color: #999; transition: transform .3s; }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height .3s ease, padding .3s ease; }
+        .faq-answer-inner { padding: 14px 18px; font-size: 13.5px; color: #555; line-height: 1.7; border-top: 1px solid #eee; }
+        .faq-item.active .faq-answer { max-height: 300px; }
+
+        /* ===== SIDEBAR CARDS ===== */
+        .sidebar-card { background: #fff; border: 1px solid #eee; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.03); }
+        .sidebar-card h3 { font-size: 15px; font-weight: 700; color: #0e2142; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 2px solid #f0f0f0; }
+        .sidebar-card .form-group { margin-bottom: 12px; }
+        .sidebar-card label { font-size: 12px; font-weight: 600; color: #555; display: block; margin-bottom: 4px; }
+        .sidebar-card select, .sidebar-card input[type="text"], .sidebar-card input[type="tel"], .sidebar-card input[type="email"] {
+            width: 100%; padding: 9px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 13px; font-family: 'Poppins', sans-serif; color: #333; background: #fafbff;
+        }
+        .sidebar-card select:focus, .sidebar-card input:focus { outline: none; border-color: #c0392b; }
+        .btn-submit { display: block; width: 100%; background: #c0392b; color: #fff; border: none; padding: 10px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; font-family: 'Poppins', sans-serif; transition: background .2s; }
+        .btn-submit:hover { background: #a93226; }
+        .sidebar-list a { display: block; font-size: 13px; color: #444; padding: 7px 0; border-bottom: 1px solid #f5f5f5; transition: color .2s; }
+        .sidebar-list a:hover { color: #c0392b; }
+        .sidebar-list a i { color: #c0392b; margin-right: 6px; font-size: 10px; }
+        .course-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+        .course-pill { background: #f5f6fa; border: 1px solid #e0e4ef; border-radius: 16px; padding: 4px 12px; font-size: 11.5px; color: #444; transition: all .2s; }
+        .course-pill:hover { background: #c0392b; color: #fff; border-color: #c0392b; }
+
+        /* ===== FEATURED COLLEGES SCROLL ===== */
+        .featured-scroll { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding-bottom: 8px; }
+        .featured-scroll::-webkit-scrollbar { height: 4px; }
+        .featured-scroll::-webkit-scrollbar-thumb { background: #ddd; border-radius: 4px; }
+        .featured-card { min-width: 200px; scroll-snap-align: start; border: 1px solid #eee; border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+        .featured-card .fc-img { height: 100px; background: linear-gradient(135deg, #e8eaf6, #f5f5f5); display: flex; align-items: center; justify-content: center; color: #999; font-size: 28px; }
+        .featured-card .fc-name { padding: 8px 10px; font-size: 12px; font-weight: 600; color: #333; line-height: 1.3; }
+        .featured-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+
+        /* ===== REVIEW CARDS ===== */
+        .review-card { border: 1px solid #eee; border-radius: 8px; padding: 14px; margin-bottom: 12px; }
+        .review-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+        .review-avatar { width: 36px; height: 36px; border-radius: 50%; background: #c0392b; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; }
+        .review-name { font-size: 13px; font-weight: 600; color: #333; }
+        .review-stars { color: #f9a825; font-size: 11px; }
+        .review-text { font-size: 13px; color: #555; line-height: 1.6; }
+
+        /* ===== CTA BAND ===== */
+        .cta-band { background: linear-gradient(135deg, #c0392b, #e74c3c); padding: 32px 0; text-align: center; }
+        .cta-band h2 { color: #fff; font-size: 22px; font-weight: 700; margin-bottom: 16px; }
+        .cta-band .btn-apply { background: #fff; color: #c0392b !important; }
+        .cta-band .btn-apply:hover { background: #f5f5f5; }
+
+        /* ===== FOOTER ===== */
+        .footer { background: #1e1e1e; color: #ccc; padding: 40px 0 0; font-size: 13px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; padding-bottom: 30px; }
+        .footer h4 { color: #fff; font-size: 15px; font-weight: 600; margin-bottom: 14px; }
+        .footer p { color: #aaa; line-height: 1.6; margin-bottom: 10px; }
+        .footer a { color: #ccc; display: block; padding: 3px 0; transition: color .2s; }
+        .footer a:hover { color: #e74c3c; }
+        .footer .contact-line { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+        .footer .contact-line i { color: #e74c3c; width: 16px; }
+        .footer-bottom { border-top: 1px solid #333; padding: 16px 0; text-align: center; color: #888; font-size: 12px; }
+
+        /* ===== FLOATING APPLY BTN ===== */
+        .floating-apply { position: fixed; right: -52px; top: 50%; transform: rotate(270deg); z-index: 99; background: #c0392b; color: #fff; padding: 8px 22px; font-size: 14px; font-weight: 600; border-radius: 8px 8px 0 0; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,.2); transition: right .3s; letter-spacing: .5px; }
+        .floating-apply:hover { right: -48px; }
+
+        /* ===== SCROLL TO TOP ===== */
+        .scroll-top { position: fixed; bottom: 24px; right: 24px; width: 40px; height: 40px; background: #c0392b; color: #fff; border: none; border-radius: 50%; font-size: 16px; cursor: pointer; display: none; z-index: 98; box-shadow: 0 2px 8px rgba(0,0,0,.2); transition: background .2s; }
+        .scroll-top:hover { background: #a93226; }
+
+        /* ===== MODAL ===== */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,.6); z-index: 10000; justify-content: center; align-items: center; }
+        .modal-overlay.show { display: flex; }
+        .modal-dialog { background: #fff; border-radius: 12px; padding: 28px; max-width: 420px; width: 90%; position: relative; box-shadow: 0 12px 40px rgba(0,0,0,.2); }
+        .modal-dialog h3 { font-size: 18px; font-weight: 700; color: #0e2142; margin-bottom: 6px; }
+        .modal-dialog .modal-sub { font-size: 13px; color: #888; margin-bottom: 18px; }
+        .modal-close { position: absolute; top: 12px; right: 16px; font-size: 20px; cursor: pointer; color: #999; background: none; border: none; }
+        .modal-close:hover { color: #333; }
+        .modal-dialog .form-group { margin-bottom: 12px; }
+        .modal-dialog input, .modal-dialog select { width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 13px; font-family: 'Poppins', sans-serif; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 960px) {
+            .sidebar { width: 300px; }
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 770px) {
+            .top-bar-nav { display: none; }
+            .cat-nav { display: none; }
+            .mob-trigger { display: block; }
+            .mobile-nav { display: block; }
+            .content-row { flex-direction: column; }
+            .sidebar { width: 100%; position: static; }
+            .college-card { flex-direction: column; align-items: center; text-align: center; }
+            .college-meta { justify-content: center; }
+            .college-badges { justify-content: center; }
+            .college-info h1 { font-size: 18px; }
+            .tab-link { padding: 10px 14px; font-size: 12px; }
+            .section-block { padding: 18px; }
+            .section-block h2 { font-size: 16px; }
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .floating-apply { right: auto; left: 0; top: auto; bottom: 0; transform: none; width: 100%; text-align: center; border-radius: 0; padding: 12px; font-size: 15px; }
+            .floating-apply:hover { right: auto; }
+            .scroll-top { bottom: 60px; }
+            .college-tabs.stickynav { top: 56px; }
+            .cta-band h2 { font-size: 18px; }
+        }
+        @media (max-width: 480px) {
+            .container { padding: 0 10px; }
+            .college-logo-wrap { width: 72px; height: 72px; }
+            .college-logo-wrap img { width: 56px; height: 56px; }
+            .section-block h2 { font-size: 15px; }
+            .data-table { font-size: 12px; }
+            .data-table thead th, .data-table tbody td { padding: 8px 10px; }
+            .stat-card .stat-num { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<div class="top-bar">
+    <div class="container">
+        <div class="top-bar-phone">
+            <a href="tel:+918434105777"><i class="fas fa-phone-alt"></i> +91-84341 05777</a>
+        </div>
+        <nav class="top-bar-nav">
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Services</a>
+            <a href="#">News</a>
+            <a href="#">Admission 2026-27</a>
+            <a href="#">Contact Us</a>
+        </nav>
+    </div>
+</div>
+
+<!-- ===== MAIN HEADER ===== -->
+<header class="main-header" id="header">
+    <div class="container">
+        <a href="#" class="logo">
+            <img src="logo1.png" alt="Vinayaka" onerror="this.style.display='none'">
+            <div class="logo-text">Vinayaka<span>Education Consultancy</span></div>
+        </a>
+        <nav class="cat-nav">
+            <div class="cat-nav-item">Engineering <i class="fas fa-chevron-down" style="font-size:10px;margin-left:4px;"></i>
+                <div class="cat-nav-panel">
+                    <h4>Top Colleges - Bengaluru</h4>
+                    <a href="#">RV College of Engineering</a>
+                    <a href="#">Ramaiah Institute of Technology (MSRIT)</a>
+                    <a href="#">BMS College of Engineering</a>
+                    <a href="#">Bangalore Institute of Technology</a>
+                    <a href="#">Dayananda Sagar College of Engineering</a>
+                    <a href="#">Christ University</a>
+                    <h4 style="margin-top:12px;">Top Private Universities</h4>
+                    <a href="#">PES University, Bengaluru</a>
+                    <a href="#">VIT University, Vellore</a>
+                    <a href="#">Manipal University, Bengaluru</a>
+                    <a href="#">RV University, Bengaluru</a>
+                </div>
+            </div>
+            <div class="cat-nav-item">Medical <i class="fas fa-chevron-down" style="font-size:10px;margin-left:4px;"></i>
+                <div class="cat-nav-panel">
+                    <h4>Medical Colleges</h4>
+                    <a href="#">BGS Global Institute of Medical Science</a>
+                    <a href="#">Jawaharlal Nehru Medical College</a>
+                    <a href="#">Kempegowda Institute of Medical Sciences</a>
+                    <a href="#">M.S. Ramaiah Medical College</a>
+                </div>
+            </div>
+            <div class="cat-nav-item">Management <i class="fas fa-chevron-down" style="font-size:10px;margin-left:4px;"></i>
+                <div class="cat-nav-panel">
+                    <h4>Management Colleges</h4>
+                    <a href="#">Christ University - MBA</a>
+                    <a href="#">Symbiosis, Bangalore</a>
+                    <a href="#">RV Institute of Management</a>
+                    <a href="#">Alliance University</a>
+                </div>
+            </div>
+            <div class="cat-nav-item">Law <i class="fas fa-chevron-down" style="font-size:10px;margin-left:4px;"></i>
+                <div class="cat-nav-panel">
+                    <h4>Law Colleges</h4>
+                    <a href="#">Kristu Jayanti College of Law</a>
+                    <a href="#">Christ University - Law</a>
+                    <a href="#">University Law College, Bangalore</a>
+                </div>
+            </div>
+            <div class="cat-nav-item">Commerce</div>
+            <div class="cat-nav-item">Dental</div>
+            <div class="cat-nav-item">More <i class="fas fa-chevron-down" style="font-size:10px;margin-left:4px;"></i></div>
+        </nav>
+        <div class="mob-trigger" id="mob-trigger"><i class="fas fa-bars"></i></div>
+    </div>
+</header>
+
+<!-- ===== MOBILE NAV ===== -->
+<div class="mobile-nav-overlay" id="mob-overlay"></div>
+<div class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-head">
+        <div class="logo-text" style="font-size:18px;color:#c0392b;font-weight:700;">Vinayaka</div>
+        <div class="close-nav" id="close-nav"><i class="fas fa-times"></i></div>
+    </div>
+    <a href="#">Home</a>
+    <a href="#">About Us</a>
+    <a href="#">Services</a>
+    <a href="#">Engineering Colleges</a>
+    <a href="#">Medical Colleges</a>
+    <a href="#">Management Colleges</a>
+    <a href="#">Law Colleges</a>
+    <a href="#">News</a>
+    <a href="#">Admission 2026-27</a>
+    <a href="#">Contact Us</a>
+</div>
+
+<!-- ===== COLLEGE PROFILE ===== -->
+<section class="college-profile">
+    <div class="container">
+        <div class="college-card">
+            <div class="college-logo-wrap">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/RVCE_logo.png/220px-RVCE_logo.png" alt="RVCE Logo" onerror="this.parentElement.innerHTML='<i class=\'fas fa-university\' style=\'font-size:36px;color:#c0392b\'></i>'">
+            </div>
+            <div class="college-info">
+                <h1>RV College of Engineering, Bangalore (RVCE)</h1>
+                <div class="college-rating">
+                    <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                    <strong>5/5</strong>
+                    <span class="count">(Based on 2 Student Reviews)</span>
+                </div>
+                <div class="college-badges">
+                    <span class="badge"><i class="fas fa-trophy"></i> NAAC A+</span>
+                    <span class="badge"><i class="fas fa-graduation-cap"></i> Autonomous</span>
+                    <span class="badge"><i class="fas fa-briefcase"></i> 90-95% Placements</span>
+                    <span class="badge"><i class="fas fa-map-marker-alt"></i> Bengaluru</span>
+                </div>
+                <div class="college-meta">
+                    <div class="meta-item"><i class="fas fa-calendar-alt"></i> Estd: 1963</div>
+                    <div class="meta-item"><i class="fas fa-building"></i> Private (Autonomous)</div>
+                    <div class="meta-item"><i class="fas fa-certificate"></i> NAAC A+</div>
+                    <div class="meta-item"><i class="fas fa-check-circle"></i> AICTE / NBA</div>
+                    <div class="meta-item"><i class="fas fa-university"></i> VTU</div>
+                </div>
+                <div class="college-location"><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</div>
+                <button class="btn-apply apply-trigger">Apply Now</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TAB NAVIGATION ===== -->
+<div class="college-tabs" id="college-tabs">
+    <div class="container">
+        <a href="#overview" class="tab-link active">Overview</a>
+        <a href="#courses-fees" class="tab-link">Courses &amp; Fees</a>
+        <a href="#eligibility" class="tab-link">Eligibility &amp; Exams</a>
+        <a href="#admissions" class="tab-link">Admissions 2026-27</a>
+        <a href="#placements" class="tab-link">Placements</a>
+        <a href="#facilities" class="tab-link">Facilities</a>
+        <a href="#contact" class="tab-link">Contact</a>
+        <a href="#reviews" class="tab-link">Reviews</a>
+    </div>
+</div>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="content-wrap">
+    <div class="container">
+        <div class="content-row">
+
+            <!-- ===== MAIN COLUMN ===== -->
+            <main class="main-content">
+
+                <!-- OVERVIEW -->
+                <section class="section-block" id="overview">
+                    <h2>About College - <span>RV College of Engineering Bangalore (RVCE)</span></h2>
+                    <p>RV College of Engineering (RVCE) admits students to its B.E. and M.Tech programmes through multiple entrance channels. The admission process is designed to maintain merit, diversity, and inclusivity while aligning with AICTE and Government of Karnataka regulations.</p>
+                    <p>Rashtreeya Vidyalaya (RV) College of Engineering Bangalore is one of the leading technical institutes located in the state of Karnataka. The campus is spread across approximately 43 acres near Mysore Road, Bengaluru with excellent road and public transport connectivity. The fee range is approximately INR 1,25,000 - 2,81,677 per annum depending on the programme and admission channel.</p>
+
+                    <h3>Latest Admission Updates</h3>
+                    <ul>
+                        <li>COMEDK UGET Counselling 2026: Round 4 has been concluded.</li>
+                        <li>KMAT Karnataka 2026: Results are scheduled for Sep 22, 2026.</li>
+                        <li>Karnataka PGCET 2026: Counselling is expected in Oct 2026.</li>
+                        <li>KCET Counselling 2026: Round 3 results have been released.</li>
+                        <li>GATE 2026: Applications open, deadline Sep 28, 2025; Exam dates: Feb 7, 8, 14, 15, 2026.</li>
+                    </ul>
+                </section>
+
+                <!-- ADMISSION CHANNELS -->
+                <section class="section-block" id="admissions">
+                    <h2>Undergraduate (B.E.) <span>Admission Channels</span></h2>
+                    <p>RVCE offers undergraduate admissions through three primary channels:</p>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Admission Channel</th>
+                                <th>Eligibility</th>
+                                <th>Selection Process</th>
+                                <th>Seats</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>KCET</strong></td>
+                                <td>10+2 PCM, min. 45% (40% for SC/ST/OBC Karnataka)</td>
+                                <td>KEA counselling by rank</td>
+                                <td>45%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>COMEDK-UGET</strong></td>
+                                <td>All Indian nationals, 10+2 PCM, min. 45%</td>
+                                <td>COMEDK ranking &amp; centralized counselling</td>
+                                <td>30%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Management Quota</strong></td>
+                                <td>10+2 PCM, min. 45%</td>
+                                <td>Academic merit &amp; interview by RVCE</td>
+                                <td>25%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Seat Distribution</h3>
+                    <div class="chart-wrap">
+                        <canvas id="ugChart"></canvas>
+                    </div>
+                </section>
+
+                <!-- HIGHLIGHTS -->
+                <section class="section-block">
+                    <h2><span>RVCE</span> - Highlights</h2>
+                    <ul>
+                        <li>Autonomous institution affiliated to Visvesvaraya Technological University (VTU), Belgaum.</li>
+                        <li>Established in 1963, RVCE is the flagship institution of the Rashtreeya Sikshana Samithi Trust.</li>
+                        <li>MCA programme accredited by NBA; all technical courses are AICTE-approved.</li>
+                        <li>NIRF 2024 Ranking: Top 50 among Engineering Colleges in India.</li>
+                        <li>Campus placements: 214+ companies visit annually with 90-95% placement rate.</li>
+                        <li>Active R&D cell that encourages faculty and student research.</li>
+                    </ul>
+                </section>
+
+                <!-- TOP COURSES -->
+                <section class="section-block" id="courses-fees">
+                    <h2><span>RVCE</span> - Top Courses &amp; Fees</h2>
+                    <p>RVCE offers courses spread across multiple streams including undergraduate, postgraduate, and professional programmes.</p>
+
+                    <h3>B.E. Programs - Fee Structure</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>Duration</th>
+                                <th>Intake</th>
+                                <th>Fees (KCET)</th>
+                                <th>Fees (COMEDK)</th>
+                                <th>Fees (Mgmt)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>B.E. Computer Science &amp; Engineering</td>
+                                <td>4 Years</td>
+                                <td>180</td>
+                                <td>&#8377;1,25,000</td>
+                                <td>&#8377;2,81,677</td>
+                                <td>Per norms</td>
+                            </tr>
+                            <tr>
+                                <td>B.E. Electronics &amp; Communication Engineering</td>
+                                <td>4 Years</td>
+                                <td>180</td>
+                                <td>&#8377;1,25,000</td>
+                                <td>&#8377;2,81,677</td>
+                                <td>Per norms</td>
+                            </tr>
+                            <tr>
+                                <td>B.E. Mechanical Engineering</td>
+                                <td>4 Years</td>
+                                <td>180</td>
+                                <td>&#8377;1,25,000</td>
+                                <td>&#8377;2,81,677</td>
+                                <td>Per norms</td>
+                            </tr>
+                            <tr>
+                                <td>B.E. Civil Engineering</td>
+                                <td>4 Years</td>
+                                <td>120</td>
+                                <td>&#8377;1,25,000</td>
+                                <td>&#8377;2,81,677</td>
+                                <td>Per norms</td>
+                            </tr>
+                            <tr>
+                                <td>B.E. Electrical &amp; Electronics Engineering</td>
+                                <td>4 Years</td>
+                                <td>120</td>
+                                <td>&#8377;1,25,000</td>
+                                <td>&#8377;2,81,677</td>
+                                <td>Per norms</td>
+                            </tr>
+                            <tr>
+                                <td>B.E. Information Science &amp; Engineering</td>
+                                <td>4 Years</td>
+                                <td>120</td>
+                                <td>&#8377;1,25,000</td>
+                                <td>&#8377;2,81,677</td>
+                                <td>Per norms</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Postgraduate Programs</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Program</th>
+                                <th>Duration</th>
+                                <th>Intake</th>
+                                <th>Fees (Per Year)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>M.Tech (Various Specializations)</td>
+                                <td>2 Years</td>
+                                <td>18-30 per branch</td>
+                                <td>&#8377;1,20,000</td>
+                            </tr>
+                            <tr>
+                                <td>Master of Computer Applications (MCA)</td>
+                                <td>3 Years</td>
+                                <td>60</td>
+                                <td>&#8377;1,20,000</td>
+                            </tr>
+                            <tr>
+                                <td>Master of Business Administration (MBA)</td>
+                                <td>2 Years</td>
+                                <td>120</td>
+                                <td>&#8377;1,50,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="#" class="know-more">Know more &raquo;</a>
+                </section>
+
+                <!-- ELIGIBILITY -->
+                <section class="section-block" id="eligibility">
+                    <h2><span>RVCE</span> - Eligibility &amp; Exams</h2>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>Eligibility</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>B.E.</strong></td>
+                                <td>10+2 with a minimum of 45% marks in PCM (40% for SC/ST/OBC Karnataka). Must have cleared KCET / COMEDK exam.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>M.Tech</strong></td>
+                                <td>Graduate engineers should have cleared the GATE exam to join M.Tech programme.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>MCA</strong></td>
+                                <td>Graduation with 50% marks, should have cleared Karnataka PGCET / KMAT.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- RANKINGS -->
+                <section class="section-block">
+                    <h2><span>RVCE</span> - Rankings and Awards</h2>
+                    <ul>
+                        <li>Recognized by Indian Society for Technical Education (ISTE).</li>
+                        <li>Ranked among top self-financing engineering colleges (ROI/Value for Money ranking).</li>
+                        <li>THE WEEK magazine ranking: 9th among 99 private engineering colleges.</li>
+                        <li>National ranking: 40th among all engineering colleges.</li>
+                        <li>Nominated as nodal center for outcome-based engineering education.</li>
+                        <li>NIRF Ranking: Top 50 Engineering Colleges in India (2024).</li>
+                    </ul>
+                </section>
+
+                <!-- PLACEMENTS -->
+                <section class="section-block" id="placements">
+                    <h2><span>RVCE</span> - Placements</h2>
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <div class="stat-num">90-95%</div>
+                            <div class="stat-label">Placement Rate</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-num">214+</div>
+                            <div class="stat-label">Companies Visit</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-num">&#8377;6-8 LPA</div>
+                            <div class="stat-label">Average Package</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-num">&#8377;45 LPA</div>
+                            <div class="stat-label">Highest Package</div>
+                        </div>
+                    </div>
+                    <p>More than 214 companies visit RVCE for campus interviews annually. The dedicated Training &amp; Placement Cell provides aptitude, soft skills, and technical training to students. Industry collaborations enable internships, research projects, and live exposure.</p>
+
+                    <h3>Top Recruiters</h3>
+                    <div class="recruiter-tags">
+                        <span class="recruiter-tag">Amazon</span>
+                        <span class="recruiter-tag">Infosys</span>
+                        <span class="recruiter-tag">TCS</span>
+                        <span class="recruiter-tag">Wipro</span>
+                        <span class="recruiter-tag">Microsoft</span>
+                        <span class="recruiter-tag">Google</span>
+                        <span class="recruiter-tag">Bosch</span>
+                        <span class="recruiter-tag">Deloitte</span>
+                        <span class="recruiter-tag">Intel</span>
+                    </div>
+                    <a href="#" class="know-more">Know more &raquo;</a>
+                </section>
+
+                <!-- CAMPUS LIFE -->
+                <section class="section-block">
+                    <h2><span>RVCE</span> - Campus Student Life</h2>
+                    <p>The students of RVCE are encouraged to participate in extra-curricular as well as cultural activities in addition to educational activities. The college has NCC and NSS for the benefit of students. Sports activities and cultural events are conducted to encourage all-round development of the students.</p>
+                </section>
+
+                <!-- SCHOLARSHIPS -->
+                <section class="section-block">
+                    <h2><span>RVCE</span> - Scholarships</h2>
+                    <p>RV College of Engineering offers scholarships to deserving students based on the following criteria:</p>
+                    <ul>
+                        <li>Merit-based scholarships for academically outstanding students.</li>
+                        <li>Scholarships based on economic and social background.</li>
+                        <li>Scholarships for students with physical disabilities.</li>
+                        <li>Sports scholarships for students excelling in athletics and sports.</li>
+                    </ul>
+                </section>
+
+                <!-- FACILITIES -->
+                <section class="section-block" id="facilities">
+                    <h2><span>RVCE</span> - Facilities</h2>
+                    <p>The students and staff of RV College of Engineering have access to excellent infrastructure and facilities:</p>
+                    <ul>
+                        <li>Smart classrooms and spacious lecture halls.</li>
+                        <li>Modern laboratories and advanced computer centers.</li>
+                        <li>Research labs for AI, Robotics, Electronics &amp; Material Sciences.</li>
+                        <li>Central library with extensive collection of books and journals.</li>
+                        <li>Separate hostels for boys and girls with modern amenities.</li>
+                        <li>Sports complex with fields for cricket, football, basketball, and more.</li>
+                        <li>Cafeteria and food court with seating for 1000+ people.</li>
+                        <li>Health center with ambulance facility.</li>
+                        <li>Campus transportation for staff and students.</li>
+                        <li>13 seminar halls, auditorium, and gymnasium.</li>
+                    </ul>
+                    <a href="#" class="know-more">Know more &raquo;</a>
+                </section>
+
+                <!-- ENTRANCE EXAMS -->
+                <section class="section-block">
+                    <h2>Entrance Exams Accepted by <span>RVCE</span></h2>
+                    <p>RV College of Engineering takes admission through the Karnataka Common Entrance Test (K-CET) conducted by the Government of Karnataka through the Karnataka Examination Authority (KEA) or through the Consortium of Medical, Engineering and Dental Colleges of Karnataka (COMEDK) undergraduate test. Management quota admissions are based on academic merit and interview conducted by RVCE.</p>
+                </section>
+
+                <!-- FEE PAYMENT -->
+                <section class="section-block">
+                    <h2><span>RVCE</span> Fee Payment Guidelines</h2>
+                    <ol>
+                        <li>Document verification by the college authorities.</li>
+                        <li>Fill DD with your name, mobile number, and branch details on the back.</li>
+                        <li>Submit the DD to the cashier at the college.</li>
+                        <li>Complete the online application form on the college portal.</li>
+                        <li>Print the application form with signatures and photographs.</li>
+                        <li>Collect the fee receipt from the cashier.</li>
+                    </ol>
+                </section>
+
+                <!-- FAQs -->
+                <section class="section-block">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What is the most popular course at RVCE, Bangalore? <i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer"><div class="faq-answer-inner">Engineering courses such as Computer Science, Mechanical, Civil, ECE, and Biotechnology are some of the most popular courses at RVCE, Bangalore.</div></div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What is the fee structure of RV College? <i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer"><div class="faq-answer-inner">The KCET annual fees for B.E. is &#8377;1,25,000, COMEDK fees is &#8377;2,81,677. M.Tech fees is &#8377;1,20,000 per year. MCA is &#8377;1,20,000 per year, and MBA is &#8377;1,50,000 per year.</div></div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What is RV College of Engineering management quota fees? <i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer"><div class="faq-answer-inner">The management quota fees vary by programme. For B.E. programmes, management quota fees are determined as per RVCE norms. For M.Tech, fees are approximately &#8377;1,20,000 per year. MCA and MBA fees follow the standard fee structure with management quota norms applied.</div></div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What are the COMEDK annual fees for B.E.? <i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer"><div class="faq-answer-inner">The COMEDK annual fees for a B.E. program is &#8377;2,81,677 as tuition fee per year.</div></div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What is the KCET fee for B.E. at RVCE? <i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer"><div class="faq-answer-inner">If you take admission through KCET, the tuition fees for B.E. is approximately &#8377;1,25,000 per year. Hostel and mess charges are additional and can be obtained from the college directly.</div></div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What are the top colleges from COMEDK? <i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer"><div class="faq-answer-inner">The top colleges from COMEDK are: #1 R.V. College of Engineering, #2 PES Institute of Technology, #3 BMS College of Engineering, #4 M.S. Ramaiah Institute of Technology, and #5 Bangalore Institute of Technology.</div></div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What is the placement record at RVCE? <i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer"><div class="faq-answer-inner">RVCE has an excellent placement record with 90-95% students placed annually. The highest package offered is &#8377;45 LPA (2024) and the average package ranges from &#8377;6-8 LPA. Top recruiters include Amazon, Microsoft, Google, Infosys, TCS, and Bosch.</div></div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How to apply for admission at RVCE? <i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer"><div class="faq-answer-inner">Students can apply through KCET (45% seats), COMEDK-UGET (30% seats), or Management Quota (25% seats). For KCET and COMEDK, admission is through centralized counselling. For management quota, apply directly through RVCE based on academic merit and interview. Contact Vinayaka Consultancy for expert admission guidance.</div></div>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- ===== SIDEBAR ===== -->
+            <aside class="sidebar">
+
+                <!-- TALK TO EXPERTS -->
+                <div class="sidebar-card">
+                    <h3>Talk To Our Experts</h3>
+                    <form action="#" onsubmit="return false;">
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <input type="text" placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="Enter phone number">
+                        </div>
+                        <div class="form-group">
+                            <label>City</label>
+                            <select>
+                                <option value="">Select City</option>
+                                <option>Bangalore</option>
+                                <option>Chennai</option>
+                                <option>Hyderabad</option>
+                                <option>Mumbai</option>
+                                <option>Delhi</option>
+                                <option>Pune</option>
+                                <option>Kolkata</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Course Interested In</label>
+                            <select>
+                                <option value="">Select Course</option>
+                                <option>B.E. Computer Science & Engineering</option>
+                                <option>B.E. Electronics & Communication</option>
+                                <option>B.E. Mechanical Engineering</option>
+                                <option>B.E. Civil Engineering</option>
+                                <option>B.E. Electrical & Electronics</option>
+                                <option>B.E. Information Science</option>
+                                <option>B.E. Aerospace Engineering</option>
+                                <option>B.E. Biotechnology</option>
+                                <option>B.E. Chemical Engineering</option>
+                                <option>B.E. Industrial Engineering</option>
+                                <option>B.E. Electronics & Telecomm</option>
+                                <option>B.E. Electronics & Instrumentation</option>
+                                <option>M.Tech</option>
+                                <option>MCA</option>
+                                <option>MBA</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-submit">Submit</button>
+                    </form>
+                </div>
+
+                <!-- RELATED COLLEGES -->
+                <div class="sidebar-card">
+                    <h3>Other Colleges You May Like</h3>
+                    <div class="sidebar-list">
+                        <a href="#"><i class="fas fa-chevron-right"></i> M.S. Ramaiah Institute of Technology</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i> BMS College of Engineering</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i> PES University, Bengaluru</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i> Dayananda Sagar College of Engineering</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i> Sir M Visvesvaraya Institute of Technology</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i> CMR Institute of Technology</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i> RV University Bangalore</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i> Christ University Engineering</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i> Bangalore Institute of Technology</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i> KLE College of Pharmacy Bangalore</a>
+                    </div>
+                </div>
+
+                <!-- SUGGESTED COURSES -->
+                <div class="sidebar-card">
+                    <h3>Courses You May Like</h3>
+                    <div class="course-pills">
+                        <a href="#" class="course-pill">B.E. CSE</a>
+                        <a href="#" class="course-pill">B.E. ECE</a>
+                        <a href="#" class="course-pill">B.E. Mech</a>
+                        <a href="#" class="course-pill">B.E. Civil</a>
+                        <a href="#" class="course-pill">B.E. EEE</a>
+                        <a href="#" class="course-pill">B.E. ISE</a>
+                        <a href="#" class="course-pill">B.E. Aerospace</a>
+                        <a href="#" class="course-pill">B.E. Biotech</a>
+                        <a href="#" class="course-pill">B.E. Chemical</a>
+                        <a href="#" class="course-pill">M.Tech CSE</a>
+                        <a href="#" class="course-pill">M.Tech VLSI</a>
+                        <a href="#" class="course-pill">M.Tech Structural</a>
+                        <a href="#" class="course-pill">M.Tech Power</a>
+                        <a href="#" class="course-pill">M.Tech Digital</a>
+                        <a href="#" class="course-pill">MCA</a>
+                        <a href="#" class="course-pill">MBA</a>
+                        <a href="#" class="course-pill">M.Tech Machine Design</a>
+                        <a href="#" class="course-pill">M.Tech Thermal</a>
+                        <a href="#" class="course-pill">B.E. Industrial</a>
+                        <a href="#" class="course-pill">B.E. E&T</a>
+                        <a href="#" class="course-pill">B.E. E&I</a>
+                    </div>
+                </div>
+
+                <!-- FEATURED COLLEGES -->
+                <div class="sidebar-card">
+                    <h3>Featured Colleges</h3>
+                    <div class="featured-scroll">
+                        <div class="featured-card">
+                            <div class="fc-img"><i class="fas fa-university"></i></div>
+                            <div class="fc-name">RV College of Engineering</div>
+                        </div>
+                        <div class="featured-card">
+                            <div class="fc-img"><i class="fas fa-university"></i></div>
+                            <div class="fc-name">BMS Institute of Technology</div>
+                        </div>
+                        <div class="featured-card">
+                            <div class="fc-img"><i class="fas fa-university"></i></div>
+                            <div class="fc-name">BMS College of Engineering</div>
+                        </div>
+                        <div class="featured-card">
+                            <div class="fc-img"><i class="fas fa-university"></i></div>
+                            <div class="fc-name">PES University</div>
+                        </div>
+                        <div class="featured-card">
+                            <div class="fc-img"><i class="fas fa-university"></i></div>
+                            <div class="fc-name">Ramaiah Institute of Technology</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STUDENT REVIEWS -->
+                <div class="sidebar-card" id="reviews">
+                    <h3>Student Reviews</h3>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar">V</div>
+                            <div>
+                                <div class="review-name">Vinoth</div>
+                                <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            </div>
+                        </div>
+                        <div class="review-text">RV College of Engineering is one of the best colleges in Bangalore. The faculties are very good. RVCE has excellent infrastructure including an innovation centre which helps students implement their ideas. The college has great placements for all department students.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar">R</div>
+                            <div>
+                                <div class="review-name">Ramesh K Menon</div>
+                                <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            </div>
+                        </div>
+                        <div class="review-text">We are very happy with the service and guidance provided. The admission process was smooth and the team guided us in the right direction. Very thankful for the support throughout the process.</div>
+                    </div>
+                    <a href="#" class="know-more">Read All Reviews &raquo;</a>
+                </div>
+
+                <!-- CONTACT -->
+                <div class="sidebar-card" id="contact">
+                    <h3>Contact Vinayaka Consultancy</h3>
+                    <p style="font-size:13px;color:#555;margin-bottom:12px;">For expert admission guidance and counselling:</p>
+                    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+                        <i class="fas fa-phone-alt" style="color:#c0392b;"></i>
+                        <a href="tel:+918434105777" style="font-size:14px;font-weight:600;color:#c0392b;">+91-84341 05777</a>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+                        <i class="fas fa-envelope" style="color:#c0392b;"></i>
+                        <a href="mailto:contact@vinayakaconsultancy.com" style="font-size:13px;color:#444;">contact@vinayakaconsultancy.com</a>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;">
+                        <i class="fas fa-map-marker-alt" style="color:#c0392b;"></i>
+                        <span style="font-size:13px;color:#444;">Bengaluru, India</span>
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+    </div>
+</div>
+
+<!-- ===== CTA BAND ===== -->
+<section class="cta-band">
+    <div class="container">
+        <h2>Interested in RV College of Engineering Bangalore?</h2>
+        <button class="btn-apply apply-trigger">Apply Now</button>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <h4>Vinayaka Consultancy</h4>
+                <p>Your trusted partner for college admissions, counselling, and career guidance across India.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <a href="#">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div>
+                <h4>Admissions</h4>
+                <a href="#">Engineering</a>
+                <a href="#">Medical</a>
+                <a href="#">Management</a>
+                <a href="#">Law</a>
+            </div>
+            <div>
+                <h4>Contact Us</h4>
+                <div class="contact-line"><i class="fas fa-phone-alt"></i> <span>+91 84341 05777</span></div>
+                <div class="contact-line"><i class="fas fa-envelope"></i> <span>contact@vinayakaconsultancy.com</span></div>
+                <div class="contact-line"><i class="fas fa-map-marker-alt"></i> <span>Bengaluru, India</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">&copy; 2026 Vinayaka. All rights reserved.</div>
+    </div>
+</footer>
+
+<!-- ===== FLOATING APPLY BTN ===== -->
+<div class="floating-apply apply-trigger">Apply Now</div>
+
+<!-- ===== SCROLL TO TOP ===== -->
+<button class="scroll-top" id="scroll-top"><i class="fas fa-chevron-up"></i></button>
+
+<!-- ===== MODAL ===== -->
+<div class="modal-overlay" id="apply-modal">
+    <div class="modal-dialog">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <h3>Admission Open 2026-27</h3>
+        <p class="modal-sub">Get expert guidance for RV College of Engineering</p>
+        <form action="#" onsubmit="return false;">
+            <div class="form-group">
+                <input type="text" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <input type="tel" placeholder="Phone Number">
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Email Address">
+            </div>
+            <div class="form-group">
+                <select>
+                    <option value="">Select Course</option>
+                    <option>B.E. Computer Science & Engineering</option>
+                    <option>B.E. Electronics & Communication</option>
+                    <option>B.E. Mechanical Engineering</option>
+                    <option>B.E. Civil Engineering</option>
+                    <option>B.E. Electrical & Electronics</option>
+                    <option>B.E. Information Science</option>
+                    <option>M.Tech</option>
+                    <option>MCA</option>
+                    <option>MBA</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-submit">Submit Application</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Sticky Header
+    const header = document.getElementById('header');
+    const tabs = document.getElementById('college-tabs');
+    let headerH = header.offsetHeight;
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY >= 100) {
+            header.classList.add('stickyheader');
+            document.body.style.paddingTop = headerH + 'px';
+        } else {
+            header.classList.remove('stickyheader');
+            document.body.style.paddingTop = '0';
+        }
+    });
+
+    // Sticky Tabs
+    const tabsTop = tabs.offsetTop;
+    window.addEventListener('scroll', function() {
+        const stickyHeaderH = header.classList.contains('stickyheader') ? header.offsetHeight : 0;
+        if (window.scrollY >= tabsTop - stickyHeaderH) {
+            tabs.classList.add('stickynav');
+            tabs.style.top = stickyHeaderH + 'px';
+        } else {
+            tabs.classList.remove('stickynav');
+        }
+    });
+
+    // Smooth Scroll for Tabs
+    document.querySelectorAll('.tab-link').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                var offset = 130;
+                var pos = target.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({ top: pos, behavior: 'smooth' });
+            }
+            document.querySelectorAll('.tab-link').forEach(function(t) { t.classList.remove('active'); });
+            this.classList.add('active');
+        });
+    });
+
+    // Scroll Spy
+    window.addEventListener('scroll', function() {
+        var sections = document.querySelectorAll('section[id], div[id="reviews"], div[id="contact"]');
+        var current = '';
+        sections.forEach(function(sec) {
+            if (window.scrollY >= sec.offsetTop - 160) {
+                current = sec.getAttribute('id');
+            }
+        });
+        document.querySelectorAll('.tab-link').forEach(function(tab) {
+            tab.classList.remove('active');
+            if (tab.getAttribute('href') === '#' + current) {
+                tab.classList.add('active');
+            }
+        });
+    });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.parentElement;
+            document.querySelectorAll('.faq-item.active').forEach(function(other) {
+                if (other !== item) other.classList.remove('active');
+            });
+            item.classList.toggle('active');
+        });
+    });
+
+    // Mobile Menu
+    document.getElementById('mob-trigger').addEventListener('click', function() {
+        document.getElementById('mobile-nav').classList.add('shownav');
+        document.getElementById('mob-overlay').classList.add('show');
+    });
+    document.getElementById('close-nav').addEventListener('click', closeMobileNav);
+    document.getElementById('mob-overlay').addEventListener('click', closeMobileNav);
+    function closeMobileNav() {
+        document.getElementById('mobile-nav').classList.remove('shownav');
+        document.getElementById('mob-overlay').classList.remove('show');
+    }
+
+    // Modal
+    function openModal() {
+        document.getElementById('apply-modal').classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+        document.getElementById('apply-modal').classList.remove('show');
+        document.body.style.overflow = '';
+    }
+    document.querySelectorAll('.apply-trigger').forEach(function(btn) {
+        btn.addEventListener('click', openModal);
+    });
+    document.getElementById('apply-modal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+    });
+
+    // Scroll to Top
+    var scrollBtn = document.getElementById('scroll-top');
+    window.addEventListener('scroll', function() {
+        scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    scrollBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Chart.js Pie Chart
+    window.addEventListener('DOMContentLoaded', function() {
+        var ctx = document.getElementById('ugChart');
+        if (ctx) {
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['KCET \u2013 45%', 'COMEDK \u2013 30%', 'Management \u2013 25%'],
+                    datasets: [{
+                        data: [45, 30, 25],
+                        backgroundColor: ['#c0392b', '#f39c12', '#3498db'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { font: { size: 13, weight: '600' } }
+                        }
+                    }
+                }
+            });
+        }
+    });
+</script>
+
+</body>
+</html>

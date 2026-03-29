@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.edudunia.com)",
+      "WebFetch(domain:www.vinayakaconsultancy.com)",
+      "WebFetch(domain:vinayakaconsultancy.com)",
+      "Bash(open:*)"
+    ]
+  }
+}
